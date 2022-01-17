@@ -10,7 +10,9 @@ class Solution {
         for(int i=0;i<s.length();i++){
             int c = s.charAt(i)-'A';
             res=(res+(i-index[c][1]) * (index[c][1]-index[c][0])%mod)%mod;
-            index[c] = new int[]{index[c][1],i};
+            index[c][0] = index[c][1];
+            index[c][1] = i;
+            
         }
         
         for(int c=0;c<26;c++){
